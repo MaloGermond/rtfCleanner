@@ -1,0 +1,3 @@
+Ceci est un exemple de fichier texte.
+Il contient plusieurs lignes.
+C'est un test pour vérifier que le script CLI fonctionne correctement.

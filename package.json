@@ -1,0 +1,16 @@
+{
+  "name": "rtfcleanner",
+  "version": "0.0.1",
+  "description": "A cli tools for cleaned dirty rtf files",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "bin": {
+    "rtfcleanner": "./index.js"
+  }
+}
