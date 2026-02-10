@@ -1,0 +1,1 @@
+Test RTFCe fichier contient du texte en gras et du texte en italique.Il est utilisé pour tester l'extraction de texte brut.
