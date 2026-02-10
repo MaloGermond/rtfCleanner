@@ -49,7 +49,7 @@ rtfcleanner path/to/your/file.txt
 
 ### Examples
 
-1. Display content of a file in the current directory:
+1. Display content of a text file in the current directory:
 
 ```bash
 node index.js example.txt
@@ -61,10 +61,17 @@ node index.js example.txt
 node index.js /path/to/your/document.txt
 ```
 
+3. Display content of an RTF file (automatically extracts plain text):
+
+```bash
+node index.js example.rtf
+```
+
 ## Features
 
 - Simple and lightweight
 - Displays the entire content of text files
+- **RTF Support**: Automatically extracts plain text from Rich Text Format (.rtf) files
 - Basic error handling for missing files
 - Works with both relative and absolute file paths
 
