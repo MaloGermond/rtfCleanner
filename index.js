@@ -24,15 +24,39 @@ fs.readFile(filePath, 'utf8', (err, data) => {
         process.exit(1);
     }
     
+    let resultText = '';
+    let outputFileName = '';
+    
     // Vérifier si c'est un fichier RTF
     if (filePath.toLowerCase().endsWith('.rtf')) {
         // Extraire le texte brut d'un fichier RTF
-        const plainText = extractPlainTextFromRTF(data);
-        console.log(plainText);
+        resultText = extractPlainTextFromRTF(data);
+        // Créer un nom de fichier de sortie
+        outputFileName = filePath.replace(/\.rtf$/i, '_cleaned.txt');
     } else {
-        // Afficher le contenu normalement pour les fichiers texte
-        console.log(data);
+        // Utiliser le contenu normalement pour les fichiers texte
+        resultText = data;
+        // Créer un nom de fichier de sortie
+        outputFileName = filePath.replace(/\.txt$/i, '_cleaned.txt');
+        // Si ce n'est pas un .txt, ajouter _cleaned.txt
+        if (outputFileName === filePath) {
+            outputFileName = filePath + '_cleaned.txt';
+        }
     }
+    
+    // Afficher le résultat
+    console.log('=== File Content ===');
+    console.log(resultText);
+    console.log('\n=== End of Content ===\n');
+    
+    // Sauvegarder le résultat dans un fichier
+    fs.writeFile(outputFileName, resultText, 'utf8', (err) => {
+        if (err) {
+            console.error(`Error saving file: ${err.message}`);
+            process.exit(1);
+        }
+        console.log(`✅ Success! Cleaned content saved to: ${outputFileName}`);
+    });
 });
 
 /**

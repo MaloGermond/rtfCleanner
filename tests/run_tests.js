@@ -13,8 +13,8 @@ exec('node ' + path.join(__dirname, '../index.js') + ' tests/test.txt', (error, 
         console.error('❌ Test 1 FAILED:', error.message);
         return;
     }
-    if (stdout.includes('fichier de test') && stdout.includes('plusieurs lignes')) {
-        console.log('✅ Test 1 PASSED: Text file read correctly');
+    if (stdout.includes('fichier de test') && stdout.includes('plusieurs lignes') && stdout.includes('Success! Cleaned content saved')) {
+        console.log('✅ Test 1 PASSED: Text file read and saved correctly');
     } else {
         console.error('❌ Test 1 FAILED: Unexpected output');
     }
@@ -28,8 +28,8 @@ setTimeout(() => {
             console.error('❌ Test 2 FAILED:', error.message);
             return;
         }
-        if (stdout.includes('Test RTF') && stdout.includes('texte en gras')) {
-            console.log('✅ Test 2 PASSED: RTF file processed correctly');
+        if (stdout.includes('Test RTF') && stdout.includes('texte en gras') && stdout.includes('Success! Cleaned content saved')) {
+            console.log('✅ Test 2 PASSED: RTF file processed and saved correctly');
         } else {
             console.error('❌ Test 2 FAILED: Unexpected output');
         }

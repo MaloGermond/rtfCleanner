@@ -52,7 +52,7 @@ rtfcleanner path/to/your/file.txt
 1. Display content of a text file in the current directory:
 
 ```bash
-node index.js example.txt
+node index.js tests/test.txt
 ```
 
 2. Display content of a file with full path:
@@ -61,17 +61,20 @@ node index.js example.txt
 node index.js /path/to/your/document.txt
 ```
 
-3. Display content of an RTF file (automatically extracts plain text):
+3. Display content of an RTF file (automatically extracts plain text and saves cleaned version):
 
 ```bash
-node index.js example.rtf
+node index.js tests/test.rtf
 ```
+
+This will create `tests/test_cleaned.txt` with the extracted plain text.
 
 ## Features
 
 - Simple and lightweight
 - Displays the entire content of text files
 - **RTF Support**: Automatically extracts plain text from Rich Text Format (.rtf) files
+- **Auto-Save**: Automatically saves cleaned content to a new text file
 - Basic error handling for missing files
 - Works with both relative and absolute file paths
 
