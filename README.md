@@ -90,21 +90,39 @@ The tool includes basic error handling:
 - `index.js` - Main CLI script
 - `package.json` - Project configuration
 - `README.md` - This documentation
-- `test.txt` - Sample text file for testing
-- `test.rtf` - Sample RTF file for testing
+- `tests/` - Directory containing test files and scripts
+  - `test.txt` - Sample text file for testing
+  - `test.rtf` - Sample RTF file for testing
+  - `run_tests.js` - Automated test script
 - `experiments/` - Directory for experimental files and tests
 
 ### Running Tests
 
-Currently, there are no automated tests, but you can manually test by:
+#### Manual Testing
+
+You can manually test by:
 
 ```bash
 # Test with text file
-node index.js test.txt
+node index.js tests/test.txt
 
 # Test with RTF file
-node index.js test.rtf
+node index.js tests/test.rtf
 ```
+
+#### Automated Testing
+
+Run the automated test suite:
+
+```bash
+node tests/run_tests.js
+```
+
+This will run the following tests:
+- Test 1: Reading normal text file
+- Test 2: Reading RTF file
+- Test 3: Non-existent file error handling
+- Test 4: No arguments provided error handling
 
 ### Adding Features
 
