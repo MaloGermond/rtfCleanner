@@ -1,11 +1,17 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+import { program } from "commander";
+import chalk from "chalk";
 
-// Vérifier si un argument est fourni
-if (process.argv.length < 3) {
-    console.error('Usage: node index.js <file_path>');
-    process.exit(1);
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const { version, description } = require("./package.json");
+
+// // Configuration de base
+program.name("rtfCleanner").description({ description }).version(version);
+
+try {
+    program.parse(process.argv);
+} catch (err) {
+    console.log(err);
 }
-
