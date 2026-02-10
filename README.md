@@ -112,7 +112,13 @@ node index.js tests/test.rtf
 
 #### Automated Testing
 
-Run the automated test suite:
+Run the automated test suite using npm:
+
+```bash
+npm test
+```
+
+Or directly:
 
 ```bash
 node tests/run_tests.js
