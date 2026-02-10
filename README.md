@@ -85,12 +85,25 @@ The tool includes basic error handling:
 
 ## Development
 
+### Project Structure
+
+- `index.js` - Main CLI script
+- `package.json` - Project configuration
+- `README.md` - This documentation
+- `test.txt` - Sample text file for testing
+- `test.rtf` - Sample RTF file for testing
+- `experiments/` - Directory for experimental files and tests
+
 ### Running Tests
 
 Currently, there are no automated tests, but you can manually test by:
 
 ```bash
-node index.js example.txt
+# Test with text file
+node index.js test.txt
+
+# Test with RTF file
+node index.js test.rtf
 ```
 
 ### Adding Features

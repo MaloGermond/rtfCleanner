@@ -1,0 +1,4 @@
+Ceci est un fichier de test pour vérifier le fonctionnement de l'outil CLI.
+Il contient plusieurs lignes de texte.
+Vous pouvez l'utiliser pour tester l'outil avec la commande :
+node index.js test.txt
