@@ -2,7 +2,7 @@
 
 import { program } from "commander";
 import chalk from "chalk";
-import { readTxtFile } from "./src/utils/readFile.js";
+import { convertTxtToRTF } from "./src/utils/convertFile.js";
 
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
@@ -13,16 +13,17 @@ program.name("rtfCleanner").description(description).version(version);
 
 // Commande pour lire un fichier TXT
 program
-    .command("read-txt")
-    .description("Lire le contenu d'un fichier TXT")
-    .argument("<path>", "Chemin vers le ficher")
+    .command("TxtToRtf")
+    .description("Convertis un fichier TXT en RTF")
+    .argument("<path>", "Chemin vers le fichier TXT à convertir")
+    .option(
+        "-o, --output <path>",
+        "Chemin vers le fichier RTF de sortie (facultatif)",
+    )
     .action(async (filePath, options) => {
         console.log({ filePath }, { options });
         try {
-            const content = await readTxtFile(filePath);
-            console.log(chalk.green("=== Contenu du fichier TXT ==="));
-            console.log(content);
-            console.log(chalk.green("=== Fin du contenu ==="));
+            await convertTxtToRTF(filePath, options?.output);
         } catch (error) {
             console.error(chalk.red(`Erreur: ${error.message}`));
             process.exit(1);

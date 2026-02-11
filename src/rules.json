@@ -1,0 +1,65 @@
+[
+	{
+		"name": "Remove multiple tab",
+		"description": "",
+		"regex": "\t{2,}\s*",
+		"replace": "\t",
+		"lang": ["fr", "en"]
+	},
+	{
+		"name": "Remove tab and space by space",
+		"description": "",
+		"regex": "\t\ ",
+		"replace": "\ ",
+		"lang": ["fr", "en"]
+	},
+	{
+		"name": "Remove double space by space",
+		"description": "",
+		"regex": "\  ",
+		"replace": "\ ",
+		"lang": ["fr", "en"]
+	},
+	{
+		"name": "Espace fine entre les guillemets français",
+		"description": "",
+		"regex": "(«\s*)(.*?)(\s*»)",
+		"replace": "«~<$2~<»",
+		"lang": ["fr"]
+	},
+	{
+		"name": "Trois points (ou plus) consécutifs en ellipse",
+		"description": "",
+		"regex": "\.{3,}",
+		"replace": "…",
+		"lang": ["fr", "en"]
+	},
+	{
+		"name": "Remove tab use as space",
+		"description": "",
+		"regex": "([a-zA-Z,]+)\t([a-zA-Z,]+)",
+		"replace": "$1 $2",
+		"lang": ["fr", "en"]
+	},
+	{
+		"name": "Remove multi line by one",
+		"description": "",
+		"regex": "\n{2,}",
+		"replace": "\n",
+		"lang": ["fr", "en"]
+	},
+	{
+		"name": "Find header",
+		"description": "Trouve le style header dans le text et le remplacer par le bon style",
+		"regex": "\\f0 \\up0 \\nosupersub \\ulnone",
+		"replace": "",
+		"lang": ["fr", "en"]
+	},
+	{
+		"name": "Empty character to remove",
+		"description": "Retire le passage à la ligne sur une ligne unique",
+		"regex": "^\\\n",
+		"replace": "",
+		"lang": ["fr", "en"]
+	}
+]
