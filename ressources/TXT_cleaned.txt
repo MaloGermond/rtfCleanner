@@ -1,3 +1,0 @@
-[WARNING] This RTF file appears to contain mostly formatting commands with little or no actual text content.
-It may be a complex document from a spreadsheet or advanced word processor.
-Raw RTF content has been saved for further analysis.
