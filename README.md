@@ -5,6 +5,7 @@ A simple command-line tool to display the content of text files.
 ## Installation
 
 ### Prerequisites
+
 - Node.js (v12 or higher recommended)
 - npm (comes with Node.js)
 
@@ -128,6 +129,7 @@ node tests/run_tests.js
 ```
 
 This will run the following tests:
+
 - Test 1: Reading normal text file
 - Test 2: Reading RTF file
 - Test 3: Non-existent file error handling
@@ -156,8 +158,8 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-[Your Name]
+Malo GERMOND
 
 ---
 
-*Built with ❤️ using Node.js*
+_Built with ❤️ using Node.js_
