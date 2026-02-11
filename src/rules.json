@@ -14,11 +14,13 @@
 		"lang": ["fr", "en"]
 	},
 	{
-		"name": "Remove double space by space",
+		"name": "Remplace les multiples espaces par un espace",
 		"description": "",
-		"regex": "\  ",
-		"replace": "\ ",
-		"lang": ["fr", "en"]
+		"regex": "([a-zA-Z,]+)\ {2,}([a-zA-Z,]+)",
+		"replace": "$1 $2",
+		"lang": ["fr", "en"],
+		"order": 2,
+		"repeat": 2
 	},
 	{
 		"name": "Espace fine entre les guillemets français",
@@ -35,17 +37,26 @@
 		"lang": ["fr", "en"]
 	},
 	{
-		"name": "Remove tab use as space",
+		"name": "Replace tab by space",
 		"description": "",
 		"regex": "([a-zA-Z,]+)\t([a-zA-Z,]+)",
 		"replace": "$1 $2",
-		"lang": ["fr", "en"]
+		"lang": ["fr", "en"],
+		"order": 1,
+		"repeat": 2
 	},
 	{
 		"name": "Remove multi line by one",
 		"description": "",
 		"regex": "\n{2,}",
 		"replace": "\n",
+		"lang": ["fr", "en"]
+	},
+	{
+		"name": "Add Space after ->",
+		"description": "",
+		"regex": "(\\f8 \\uc0)\\u8594 ",
+		"replace": "$1\u8594 ",
 		"lang": ["fr", "en"]
 	},
 	{
