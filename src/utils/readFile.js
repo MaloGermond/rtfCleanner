@@ -5,7 +5,7 @@ import fs from "fs";
  * @param {string} filePath - Chemin vers le fichier TXT
  * @returns {string} Contenu du fichier TXT
  */
-export function readTxtFile(filePath) {
+export function readTxtFile(filePath, verbose = false) {
     // Vérifier si le fichier existe
     if (!fs.existsSync(filePath)) {
         throw new Error(`File "${filePath}" does not exist.`);
@@ -18,9 +18,11 @@ export function readTxtFile(filePath) {
 
     const content = fs.readFileSync(filePath, "utf8");
 
-    console.log(chalk.green("=== Contenu du fichier TXT ==="));
-    console.log(content);
-    console.log(chalk.green("=== Fin du contenu ==="));
+    if (verbose) {
+        console.log(chalk.green("=== Contenu du fichier TXT ==="));
+        console.log(content);
+        console.log(chalk.green("=== Fin du contenu ==="));
+    }
 
     // Lire le contenu du fichier de manière synchrone
     return content;
