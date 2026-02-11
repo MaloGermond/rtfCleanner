@@ -45,7 +45,9 @@ program
         console.log({ filePath }, { options });
         try {
             const content = await readRtfFile(filePath);
-            await readJsonFile(options?.config, true);
+            const rules = await readJsonFile(options?.config);
+            const regex = new RegExp(rules[0].regex, "gm");
+            console.log(content.replaceAll(regex, rules[0].replace));
             // await cleanRtf(content, );
         } catch (error) {
             console.error(chalk.red(`Erreur: ${error.message}`));

@@ -1,5 +1,9 @@
 [
 	{
+		"regex": "a",
+		"replace": "bla"
+	},
+	{
 		"regex": "([a-zA-Z,]+)\t([a-zA-Z,]+)",
 		"replace": "$1 $2"
 	}
