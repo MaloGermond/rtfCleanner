@@ -1,5 +1,11 @@
 [
 	{
+		"regex": "\\\\\\n",
+		"replace": "\\par\n",
+		"enable": true,
+		"description": "ajoute la bonne balise de fin de paragraphes"
+	},
+	{
 		"regex": "([a-zA-Z,]+)\t([a-zA-Z,]+)",
 		"replace": "$1 $2",
 		"enable": true
@@ -20,16 +26,23 @@
 		"enable": true
 	},
 	{
-		"regex": "\\\\pard\\\\pardeftab720.*\\\n+\\\\cf2(.*)\\\\",
+		"regex": "\\\\f4 \\\\uc0\\\\u64259 \\n\\\\f1 ",
+		"replace": "",
+		"description": "Useless separation",
+		"enable": true
+	},
+
+	{
+		"regex": "\\\\pard\\\\pardeftab720.*\\\n+\\\\cf2(.*)\\\\par",
 		"replace": "\\pard\\pardeftab720\\li1275\\ri1291\\sa241\\qj\\partightenfactor0\\n\\f1\\b0 \\cf2$1\\",
 		"description": "Uniformisation des styles body",
 		"enable": true
 	},
 	{
-		"regex": "\\\\page \\\\pard\\\\pardeftab720\\\\partightenfactor0\n\\\\cf2 \\\\",
+		"regex": "\\\\page \\\\\\n\\\\pard\\\\pardeftab720\\\\li1275\\\\ri1291\\\\sa241\\\\qj\\\\partightenfactor0\\\\n\\\\f1\\\\b0 \\\\cf2",
 		"replace": "",
 		"description": "Remove useless forced new page",
-		"enable": false
+		"enable": true
 	},
 	{
 		"regex": " \\\n\\pard\\pardeftab\\d+\\partightenfactor\\d+\n\\cf\\d+ \\\n\\pard",
