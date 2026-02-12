@@ -11,7 +11,7 @@
 		"enable": true
 	},
 	{
-		"regex": "(\\w)+ *: *(\\w)+",
+		"regex": "(\\w+) *: *(\\w+)",
 		"replace": "$1: $2",
 		"enable": true,
 		"description": "Regle d'espacement sur les doubles points"
