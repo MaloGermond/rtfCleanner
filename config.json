@@ -3,7 +3,7 @@
 		"regex": "\\\\\\n",
 		"replace": "\\par\n",
 		"enable": true,
-		"description": "ajoute la bonne balise de fin de paragraphes"
+		"description": "Ajoute la bonne balise de fin de paragraphes"
 	},
 	{
 		"regex": "([a-zA-Z,]+)\t([a-zA-Z,]+)",
@@ -36,6 +36,11 @@
 		"regex": "\\\\pard\\\\pardeftab720.*\\\n+\\\\cf2(.*)\\\\par",
 		"replace": "\\pard\\pardeftab720\\li1275\\ri1291\\sa241\\qj\\partightenfactor0\\n\\f1\\b0 \\cf2$1\\",
 		"description": "Uniformisation des styles body",
+		"enable": true
+	},
+	{
+		"regex": "\\\\pard\\\\pardeftab720\\\\partightenfactor0\\n\\n\\\\f0\\\\b\\\\fs24 \\\\cf2 \\\\par",
+		"replace": "",
 		"enable": true
 	},
 	{
