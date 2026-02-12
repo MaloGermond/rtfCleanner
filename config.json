@@ -11,6 +11,12 @@
 		"enable": true
 	},
 	{
+		"regex": "(\\w)+ *: *(\\w)+",
+		"replace": "$1: $2",
+		"enable": true,
+		"description": "Regle d'espacement sur les doubles points"
+	},
+	{
 		"regex": "([a-zA-Z,]+)\t([a-zA-Z,]+)",
 		"replace": "$1 $2",
 		"enable": true
@@ -41,25 +47,20 @@
 	{
 		"regex": "\\\\pard\\\\pardeftab720\\\\partightenfactor0\\n\\n\\\\f0\\\\b\\\\fs24 \\\\cf2 \\\\par",
 		"replace": "",
-		"enable": true
+		"enable": true,
+		"description": "Remove useless new paragraphes between 1.1 and body"
+	},
+	{
+		"regex": "\\\\pard\\\\pardeftab720\\\\li1275\\\\ri1291\\\\sa241\\\\qj\\\\partightenfactor0\\\\n\\\\f1\\\\b0 \\\\cf2 \\\\",
+		"replace": "",
+		"enable": true,
+		"description": "Remove useless new paragraphes"
 	},
 	{
 		"regex": "\\\\page \\\\\\n\\\\pard\\\\pardeftab720\\\\li1275\\\\ri1291\\\\sa241\\\\qj\\\\partightenfactor0\\\\n\\\\f1\\\\b0 \\\\cf2",
 		"replace": "",
 		"description": "Remove useless forced new page",
 		"enable": true
-	},
-	{
-		"regex": " \\\n\\pard\\pardeftab\\d+\\partightenfactor\\d+\n\\cf\\d+ \\\n\\pard",
-		"replace": "\n\\pard HELLOOOOOOO",
-		"description": "retire les multiples saut de paragraphes",
-		"enable": false
-	},
-	{
-		"regex": "\\\n\\pard\\pardeftab\\d+\\sa\\d+\\partightenfactor\\d+\n\\cf\\d+ \\\n\\pard",
-		"replace": "------FIND AND REPLACE-----",
-		"description": "retire les multiples saut de paragraphes quand ils se repetent",
-		"enable": false
 	},
 	{
 		"regex": " (Helvetica|HelveticaNeue|LucidaGrande|Arial|ArialMT|PTMono|Times-Roman)(-[a-zA-Z]*)?;",
@@ -69,6 +70,13 @@
 	{
 		"regex": "\\\\f\\d+\\\\b\\\\fs\\d+ \\\\cf\\d+ \\\\up\\d+ \\\\nosupersub \\\\ulnone \\\\cell \\\\lastrow\\\\row\\n\\\\pard\\\\pardeftab\\d+\\\\sa\\d+\\\\partightenfactor\\d+\\n\\n\\\\f\\d+\\\\b\\d+\\\\fs\\d+ \\\\cf\\d+ \\\\page \\\\pard\\\\pardeftab\\d+\\\\sa\\d+\\\\partightenfactor\\d+\\n\\n\\\\f\\d+\\\\b\\\\fs\\d+ \\\\cf\\d+ \\\\",
 		"replace": "\\cell \\row",
-		"enable": true
+		"enable": true,
+		"description": "Rassemble une partie des tableaux"
+	},
+	{
+		"regex": "\\\\page \\\\par\\n",
+		"replace": "\n",
+		"enable": true,
+		"description": "Retire les passages de passe inutile dans des paragraphes"
 	}
 ]
