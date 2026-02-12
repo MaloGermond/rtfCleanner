@@ -23,6 +23,24 @@
 		"description": "Regle ouverture parenthèse"
 	},
 	{
+		"regex": "(\\w+) *+ *(\\w+)",
+		"replace": "$1 + $2",
+		"enable": true,
+		"description": "Regle plus"
+	},
+	{
+		"regex": "(\\w+) +; *(\\w+)",
+		"replace": "$1; $2",
+		"enable": true,
+		"description": "Regle ouverture point virgule"
+	},
+	{
+		"regex": "(\\w+) *, *(\\w+)",
+		"replace": "$1, $2",
+		"enable": true,
+		"description": "Regle ouverture virgule"
+	},
+	{
 		"regex": "(\\w+) *\\) *(\\w+)",
 		"replace": "$1 ) $2",
 		"enable": true,
