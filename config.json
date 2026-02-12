@@ -17,6 +17,18 @@
 		"description": "Regle d'espacement sur les doubles points"
 	},
 	{
+		"regex": "(\\w+) *\\( *(\\w+)",
+		"replace": "$1 ($2",
+		"enable": true,
+		"description": "Regle ouverture parenthèse"
+	},
+	{
+		"regex": "(\\w+) *\\) *(\\w+)",
+		"replace": "$1 ) $2",
+		"enable": true,
+		"description": "Regle fermeture parenthèse"
+	},
+	{
 		"regex": "([a-zA-Z,]+)\t([a-zA-Z,]+)",
 		"replace": "$1 $2",
 		"enable": true
