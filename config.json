@@ -1,10 +1,56 @@
 [
 	{
-		"regex": "a",
-		"replace": "bla"
+		"regex": "([a-zA-Z,]+)\t([a-zA-Z,]+)",
+		"replace": "$1 $2",
+		"enable": true
 	},
 	{
 		"regex": "([a-zA-Z,]+)\t([a-zA-Z,]+)",
-		"replace": "$1 $2"
+		"replace": "$1 $2",
+		"enable": true
+	},
+	{
+		"regex": " {2,}",
+		"replace": " ",
+		"enable": true
+	},
+	{
+		"regex": " \n{2,}",
+		"replace": "\n",
+		"enable": true
+	},
+	{
+		"regex": "\\\\pard\\\\pardeftab720.*\\\n+\\\\cf2(.*)\\\\",
+		"replace": "\\pard\\pardeftab720\\li1275\\ri1291\\sa241\\qj\\partightenfactor0\\n\\f1\\b0 \\cf2$1\\",
+		"description": "Uniformisation des styles body",
+		"enable": true
+	},
+	{
+		"regex": "\\\\page \\\\pard\\\\pardeftab720\\\\partightenfactor0\n\\\\cf2 \\\\",
+		"replace": "",
+		"description": "Remove useless forced new page",
+		"enable": false
+	},
+	{
+		"regex": " \\\n\\pard\\pardeftab\\d+\\partightenfactor\\d+\n\\cf\\d+ \\\n\\pard",
+		"replace": "\n\\pard HELLOOOOOOO",
+		"description": "retire les multiples saut de paragraphes",
+		"enable": false
+	},
+	{
+		"regex": "\\\n\\pard\\pardeftab\\d+\\sa\\d+\\partightenfactor\\d+\n\\cf\\d+ \\\n\\pard",
+		"replace": "------FIND AND REPLACE-----",
+		"description": "retire les multiples saut de paragraphes quand ils se repetent",
+		"enable": false
+	},
+	{
+		"regex": " (Helvetica|HelveticaNeue|LucidaGrande|Arial|ArialMT|PTMono|Times-Roman)(-[a-zA-Z]*)?;",
+		"replace": "Exo$2;",
+		"enable": true
+	},
+	{
+		"regex": "\\\\f\\d+\\\\b\\\\fs\\d+ \\\\cf\\d+ \\\\up\\d+ \\\\nosupersub \\\\ulnone \\\\cell \\\\lastrow\\\\row\\n\\\\pard\\\\pardeftab\\d+\\\\sa\\d+\\\\partightenfactor\\d+\\n\\n\\\\f\\d+\\\\b\\d+\\\\fs\\d+ \\\\cf\\d+ \\\\page \\\\pard\\\\pardeftab\\d+\\\\sa\\d+\\\\partightenfactor\\d+\\n\\n\\\\f\\d+\\\\b\\\\fs\\d+ \\\\cf\\d+ \\\\",
+		"replace": "\\cell \\row",
+		"enable": true
 	}
 ]
